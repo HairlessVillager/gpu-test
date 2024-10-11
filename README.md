@@ -29,13 +29,13 @@ Tips:
 #### Build image
 
 ```bash
-docker build -t ai-detection-api:v3 .
+docker build -t gpu-test .
 ```
 
 #### Start a container
 
 ```bash
-docker run -d --name gpu-test --gpus '"device=3"' -p 8000:8000 ai-detection-api:v3
+docker run -d --gpus '"device=3"' -p 8000:8000 -e BATCH_SIZE_MAX=8 -e BATCH_TIMEOUT=0.5 gpu-test
 ```
 
 Run the following command to test:

@@ -11,8 +11,8 @@ from transformers import pipeline
 
 app = FastAPI()
 logger = getLogger("app")
-BATCH_TIMEOUT = os.getenv("BATCH_TIMEOUT")
-BATCH_SIZE_MAX = os.getenv("BATCH_SIZE_MAX")
+BATCH_TIMEOUT = float(os.getenv("BATCH_TIMEOUT"))
+BATCH_SIZE_MAX = int(os.getenv("BATCH_SIZE_MAX"))
 
 
 class DebugContext:
